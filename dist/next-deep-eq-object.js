@@ -11,10 +11,16 @@
     }
 
     if (inObj1 && inObj2 && isObject(inObj1) && isObject(inObj2)) {
-      for (var key in inObj1) {
-        if (inObj1.hasOwnProperty(key)) {
-          var value = inObj1[key];
-          return nx.deepEqObject(value, inObj2[key]);
+      var keys = Object.keys(inObj1);
+      var length = keys.length;
+      if (length !== Object.keys(inObj2).length) {
+        return false;
+      }
+
+      for (i = length; i-- !== 0; ) {
+        key = keys[i];
+        if (!nx.deepEqObject(inObj1[key], inObj2[key])) {
+          return false;
         }
       }
       return true;
