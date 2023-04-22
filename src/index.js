@@ -13,12 +13,14 @@ nx.deepEqual = function (inObj1, inObj2) {
 
     for (var i = 0; i < length; i++) {
       var key = keys[i];
-      if (!nx.deepEqual(inObj1[key], inObj2[key])) {
-        return false;
-      }
+      var val1 = inObj1[key];
+      var val2 = inObj2[key];
+      if (!nx.deepEqual(val1, val2)) return false;
     }
+
     return true;
   }
+
   return false;
 };
 

@@ -19,4 +19,21 @@ describe('api.basic test', () => {
     const res = nx.deepEqual(obj1, obj2);
     expect(res).toEqual(true);
   });
+
+  test('primtive value', () => {
+    const res1 = nx.deepEqual(1, 1);
+    const res2 = nx.deepEqual('1', '1');
+    const res3 = nx.deepEqual(true, true);
+    const res4 = nx.deepEqual(false, false);
+    expect(res1).toEqual(true);
+    expect(res2).toEqual(true);
+    expect(res3).toEqual(true);
+    expect(res4).toEqual(true);
+  });
+
+  test('null/undefined', () => {
+    const res = nx.deepEqual(null, undefined);
+    expect(res).toEqual(false);
+  });
+
 });
