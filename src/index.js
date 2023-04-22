@@ -5,7 +5,7 @@ const isObject = (inObj) => inObj && typeof inObj === 'object';
 nx.deepEqual = function (inObj1, inObj2) {
   if (inObj1 === inObj2) return true;
 
-  if (inObj1 && inObj2 && isObject(inObj1) && isObject(inObj2)) {
+  if (isObject(inObj1) && isObject(inObj2)) {
     var keys = Object.keys(inObj1);
     var length = keys.length;
 
