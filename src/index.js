@@ -24,7 +24,7 @@ nx.deepEqual = function (inObj1, inObj2) {
   return false;
 };
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
   module.exports = nx.deepEqual;
 }
 
