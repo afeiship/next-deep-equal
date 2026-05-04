@@ -1,4 +1,4 @@
-require('../src');
+import '../src';
 
 jest.setTimeout(60 * 1000);
 
@@ -35,5 +35,4 @@ describe('api.basic test', () => {
     const res = nx.deepEqual(null, undefined);
     expect(res).toEqual(false);
   });
-
 });
